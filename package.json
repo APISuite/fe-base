@@ -3,13 +3,22 @@
   "version": "0.0.0-next.0",
   "description": "ApiSuite core base that exports a provider of server settings, style system and internationalization.",
   "author": "Bruno Morgado <bruno@cloudoki.com>",
-  "license": "MIT",
+  "license": "MPL-2",
+  "homepage": "https://github.com/APISuite/fe-base#readme",
+  "bugs": {
+    "url": "https://github.com/APISuite/fe-base/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/APISuite/fe-base"
+  },
   "main": "dist/index.js",
   "scripts": {
     "build": "rimraf ./dist && tsc && node scripts/move-build-files dist",
     "prebuild": "npm run lint",
     "lint": "eslint './lib/**/*.{js,ts,tsx}'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "semantic-release": "semantic-release"
   },
   "peerDependencies": {
     "react": "^16.12.0",
@@ -22,6 +31,8 @@
   },
   "devDependencies": {
     "@material-ui/core": "4.11.3",
+    "@semantic-release/changelog": "5.0.1",
+    "@semantic-release/git": "9.0.0",
     "@types/node": "14.14.37",
     "@types/react": "17.0.2",
     "@typescript-eslint/eslint-plugin": "4.12.0",
@@ -34,6 +45,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-i18next": "11.8.13",
+    "semantic-release": "17.4.2",
     "typescript": "4.1.3"
   }
 }
