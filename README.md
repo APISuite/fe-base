@@ -126,18 +126,6 @@ export const MyComponent = () => {
 };
 ```
 
-If there is a need to use any other packages from MUI-UI, like lab and icons, add this alias to your webpack config:
-
-```js
-...
-
-alias: {
-  "@material-ui/core": path.resolve(__dirname, "node_modules", "@apisuite", "fe-base", "node_modules", "@material-ui/core"),
-},
-
-...
-```
-
 <a name="release-irrelevant"></a>
 
 <br />
