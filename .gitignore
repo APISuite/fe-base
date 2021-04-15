@@ -1,0 +1,20 @@
+# Dependency directory
+# https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
+node_modules
+
+#dist folder
+dist
+
+# IDEA/Webstorm project files
+.idea
+*.iml
+
+#VSCode metadata
+.vscode
+jsconfig.json
+
+# Mac files
+.DS_Store
+
+# environment variables file
+.env

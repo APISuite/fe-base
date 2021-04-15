@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "ES2020",
+    "target": "ES2020",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "esModuleInterop": true,
+    "outDir": "./dist",
+    "downlevelIteration": true,
+    "declaration": true,
+    "strict": true,
+    "noImplicitAny": true,
+  },
+  "include": ["lib/**/*"],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
