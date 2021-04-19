@@ -2,6 +2,16 @@ version: 2.1
 orbs:
   node: circleci/node@1.1.6
 jobs:
+  test-and-build:
+    executor:
+      name: node/default
+    steps:
+      - checkout
+      - node/with-cache:
+          steps:
+            - run: npm ci
+            - run: npm run build
+
   build-and-publish:
     executor:
       name: node/default
@@ -12,7 +22,17 @@ jobs:
             - run: npm ci
             - run: npm run build
             - run: npm run semantic-release
+
 workflows:
+  test-and-build:
+    jobs:
+      - test-and-build:
+          filters:
+            branches:
+              ignore:
+                - next
+                - master
+
   build-and-publish:
     jobs:
       - build-and-publish:
