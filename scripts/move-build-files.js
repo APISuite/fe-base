@@ -30,6 +30,8 @@ async function main(args) {
     fs.promises.readdir(path.resolve(cwd, "lib", "assets")),
     // make sure assets folder exit
     fs.promises.mkdir(path.resolve(cwd, "dist", "assets"), { recursive: true }),
+    // make sure scripts folder exit
+    fs.promises.mkdir(path.resolve(cwd, "dist", "scripts"), { recursive: true }),
   ]);
 
   // remove devDependencies from package.json
@@ -48,6 +50,7 @@ async function main(args) {
   const toMove = [
     fs.promises.writeFile(path.resolve(moveDir, pkgFileName), JSON.stringify(pkg, null, 2)),
     fs.promises.writeFile(path.resolve(moveDir, readmeFileName), readmeFile),
+    fs.promises.copyFile(path.resolve(cwd, "scripts", "convert-translation.js"), path.resolve(cwd, moveDir, "scripts", "convert-translation.js")),
     fs.promises.copyFile(path.resolve(cwd, "LICENSE"), path.resolve(cwd, moveDir, "LICENSE")),
   ];
 

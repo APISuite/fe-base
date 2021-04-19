@@ -12,7 +12,10 @@
     "type": "git",
     "url": "https://github.com/APISuite/fe-base"
   },
-  "main": "dist/index.js",
+  "main": "index.js",
+  "bin": {
+    "convert-translation": "scripts/convert-translation.js"
+  },
   "scripts": {
     "build": "rimraf ./dist && tsc && node scripts/move-build-files dist",
     "prebuild": "npm run lint",
