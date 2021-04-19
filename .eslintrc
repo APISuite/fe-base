@@ -42,12 +42,18 @@
   },
   "overrides": [
     {
-      "files": ["./scripts/*"],
+      "files": ["./scripts/*", "./__tests__/__mocks__/jest/*"],
       "env": {
         "node": true
       },
       "rules": {
         "@typescript-eslint/no-var-requires": "off"
+      }
+    },
+    {
+      "files": ["./__tests__/*"],
+      "env": {
+        "jest": true
       }
     }
   ]
