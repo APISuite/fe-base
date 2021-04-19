@@ -11,7 +11,7 @@ npm install @apisuite/fe-base
 
 ### ConfigProvider
 
-Editor provider, should wrap all other components.
+The provider should wrap all other components.
 
 | prop | required | example value | description |
 |------|----------|-------|-------------|
