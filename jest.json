@@ -1,0 +1,22 @@
+{
+
+  "automock": false,
+  "preset": "ts-jest",
+  "testRegex": "__tests__/.*.spec.(js|ts|tsx)$",
+  "moduleFileExtensions": ["ts", "tsx", "js", "json", "node"],
+  "moduleDirectories": ["lib", "node_modules"],
+  "transform": {
+    "^.+\\.ts$": "ts-jest",
+    ".+\\.(jpg|jpeg|png|gif|svg|graphql)$": "<rootDir>/__tests__/__mocks__/jest/transformStub.js"
+  },
+  "setupFiles": [
+    "./__tests__/__mocks__/jest/setup.js"
+  ],
+  "collectCoverage": false,
+  "collectCoverageFrom": [
+    "**/*.{ts,tsx}",
+    "!**/index.{ts,tsx}",
+    "!**/util/test-utils.tsx",
+    "!**/node_modules/**"
+  ]
+}

@@ -11,14 +11,14 @@ npm install @apisuite/fe-base
 
 ### ConfigProvider
 
-Editor provider, should wrap all other components.
+The provider should wrap all other components.
 
 | prop | required | example value | description |
 |------|----------|-------|-------------|
 | api | Yes | `{ base: <ROOT_ENDPOINT>, settings?: <SETTINGS_ROUTE>, owner?: <OWNER_ROUTE> }` | API endpoints to fetch settings. Only base is required, the other routes will default to it's property names. |
 | translations | Yes | `{ "en-US": import("./en-US"), "pt-PT": import("./pt-PT") }` | Dynamic imports mapping for translations . |
 
-Wrap your App with the `ConfigProvider` to have access to the settings and style context.
+Have access to settings and style context. Wrap your App with the `ConfigProvider`.
 
 ```tsx
 const translations = {
@@ -39,7 +39,6 @@ const translations = {
 Using settings:
 
 ```tsx
-import React, { useEffect } from "react";
 import { useConfig } from "@apisuite/fe-base";
 
 export const MyComponent = () => {
@@ -125,6 +124,43 @@ export const MyComponent = () => {
   );
 };
 ```
+
+## Tools
+
+### convert-translation
+
+A `convert-translation` script is provided to help convert `json` translation files into `csv` format and back.
+
+To use it run it from the bin folder `./node_modules/.bin/convert-translation` with a file path as argument or add it to your scripts:
+
+```json
+...
+"scripts": {
+  ...
+  "convert-translation": "./node_modules/.bin/convert-translation"
+}
+...
+```
+
+Then in your terminal run:
+
+```bash
+npm run convert-translation ./translations/en-US.json # npm run convert-translation ./en-US.csv
+```
+
+**JSON File**
+
+Normal `[key]: value` pairs object.
+
+**CSV File**
+
+The CSV file follows google translation service requirements, which consists in two columns without a header, where the first is the `key` and the second is the `value`. You can add more columns to give more context to the translators, `convert-translation` will only handle this two columns.
+
+| | |
+|-|-|
+| MyComponent.welcome | welcome to {{portalName}}! |
+| MyComponent.registerCTA | register |
+| MyPage.hello | Hello World! |
 
 <a name="release-irrelevant"></a>
 
