@@ -1,3 +1,10 @@
+# [1.0.0-next.3](https://github.com/APISuite/fe-base/compare/v1.0.0-next.2...v1.0.0-next.3) (2021-04-20)
+
+
+### Performance Improvements
+
+* export i18n instance and Trans component ([#3](https://github.com/APISuite/fe-base/issues/3)) ([8924e9a](https://github.com/APISuite/fe-base/commit/8924e9a235eeda98e0fc4db1b5e62b3df1a7bd30))
+
 # [1.0.0-next.2](https://github.com/APISuite/fe-base/compare/v1.0.0-next.1...v1.0.0-next.2) (2021-04-19)
 
 
