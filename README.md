@@ -56,9 +56,11 @@ i18n is provided using [react-i18next](https://react.i18next.com/). This package
 
 | method | description |
 |--------|-------------|
+| i18n | i18n instance |
 | changeLocale | Changes current locale and optionally registers new translations merging them deep. |
 | registerTranslations | Registers new translations merging them deep. |
-| useTranslation | Hook to access translations. see [react-i18next docs](https://react.i18next.com/latest/usetranslation-hook).
+| Trans | Component to help interpolation with HTML elements. see [react-i18next docs](https://react.i18next.com/latest/trans-component). |
+| useTranslation | Hook to access translations. see [react-i18next docs](https://react.i18next.com/latest/usetranslation-hook). |
 
 ```tsx
 import React, { useEffect } from "react";
