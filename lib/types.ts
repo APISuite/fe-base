@@ -10,6 +10,7 @@ export interface ConfigProviderProps {
     base: string,
     settings?: string,
     owner?: string,
+    translations?: string,
   },
   /**
    * Translation dynamic imports object
@@ -78,6 +79,12 @@ export interface DefaultConfig {
       components: [],
     },
   },
+}
+
+export type i18nTranslationOptions = {
+  serverUrl: string,
+  localTranslations: ConfigProviderProps["translations"],
+  loaded: string[],
 }
 
 declare module "@material-ui/core/styles/createPalette" {

@@ -6,9 +6,9 @@ import { safeMergeDeep } from "./util/safeMergeDeep";
 import { localGet } from "./util/storage";
 import AirDriftSrc from "./assets/adrift.svg";
 
-import { changeLocale, registerTranslations } from "./i18n";
+import { setOptions, changeLocale, registerTranslations } from "./i18n";
 import { ConfigContext } from "./context";
-import { defaultState, apiDefaults,fallbackLng, LOCALE_KEY } from "./constants";
+import { defaultState, apiDefaults, fallbackLng, LOCALE_KEY } from "./constants";
 import useStyles from "./styles";
 import { ConfigProviderProps, ConfigState, Locale } from "./types";
 
@@ -22,11 +22,18 @@ export const ConfigProvider: React.FC<ConfigProviderProps> = ({ children, api, t
     const bootstrap = async () => {
       try {
         // initialize translations
-        registerTranslations(fallbackLng, await translations[fallbackLng]);
+        setOptions({
+          serverUrl: `${api.base}/${api.translations || apiDefaults.translations}`,
+          localTranslations: translations,
+        });
+
+        // always get fallback translations
+        await registerTranslations(fallbackLng);
         const selectedLocale = localGet<Locale>(LOCALE_KEY);
 
+        // change locale in case the selected one is not the same as fallback
         if (selectedLocale != null && selectedLocale !== fallbackLng) {
-          changeLocale(selectedLocale, await translations[selectedLocale]);
+          await changeLocale(selectedLocale);
         }
 
         // fetch settings
