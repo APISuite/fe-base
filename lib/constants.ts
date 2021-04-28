@@ -1,6 +1,7 @@
 import { ConfigState } from "./types";
 
 export const __DEV__ = process.env.NODE_ENV === "development";
+export const __TEST__ = process.env.NODE_ENV === "test";
 
 export const LOCALE_KEY = "lng";
 
@@ -8,7 +9,8 @@ export const fallbackLng = "en-US";
 
 export enum apiDefaults {
   settings = "settings",
-  owner = "owner"
+  owner = "owner",
+  translations = "translations",
 }
 
 export const defaultState: ConfigState = {
