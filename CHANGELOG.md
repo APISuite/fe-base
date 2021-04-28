@@ -1,3 +1,10 @@
+# [1.0.0-next.4](https://github.com/APISuite/fe-base/compare/v1.0.0-next.3...v1.0.0-next.4) (2021-04-28)
+
+
+### Features
+
+* fetch translations from backend support ([#4](https://github.com/APISuite/fe-base/issues/4)) ([47d0354](https://github.com/APISuite/fe-base/commit/47d03546879f83d7253ab90552b913b57f992ac9))
+
 # [1.0.0-next.3](https://github.com/APISuite/fe-base/compare/v1.0.0-next.2...v1.0.0-next.3) (2021-04-20)
 
 
