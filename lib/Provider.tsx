@@ -50,7 +50,7 @@ export const ConfigProvider: React.FC<ConfigProviderProps> = ({ children, api, t
         );
 
         // create theme from API configurations
-        appTheme.current = createMuiTheme({ palette: theme });
+        appTheme.current = createMuiTheme(theme);
 
         // initialize state with API configurations
         setState((s) => safeMergeDeep(s, { ...rest, ownerInfo, initialized: true }));
