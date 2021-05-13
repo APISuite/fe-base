@@ -1,3 +1,10 @@
+# [1.0.0-next.5](https://github.com/APISuite/fe-base/compare/v1.0.0-next.4...v1.0.0-next.5) (2021-05-13)
+
+
+### Performance Improvements
+
+* accept theme full from API ([#5](https://github.com/APISuite/fe-base/issues/5)) ([3093b57](https://github.com/APISuite/fe-base/commit/3093b578d20287d1938002f0bf2132fc911a3986))
+
 # [1.0.0-next.4](https://github.com/APISuite/fe-base/compare/v1.0.0-next.3...v1.0.0-next.4) (2021-04-28)
 
 
