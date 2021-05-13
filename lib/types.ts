@@ -91,16 +91,10 @@ declare module "@material-ui/core/styles/createPalette" {
   interface Palette {
     label: string,
     gradient: PaletteColor,
-    dimensions: {
-      borderRadius: number,
-    },
   }
 
   interface PaletteOptions {
     label: string,
     gradient: PaletteColor,
-    dimensions: {
-      borderRadius: number,
-    },
   }
 }
