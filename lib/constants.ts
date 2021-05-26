@@ -48,4 +48,40 @@ export const defaultState: ConfigState = {
       components: [],
     },
   },
+  navigation: {
+    title: {
+      route: "/",
+      iconFallbackName: "circle",
+    },
+    admin: {
+      tabs: [],
+      events: {
+        afterLogin: "",
+      },
+    },
+    organizationOwner: {
+      tabs: [],
+      events: {
+        afterLogin: "",
+      },
+    },
+    developer: {
+      tabs: [],
+      events: {
+        afterLogin: "",
+      },
+    },
+    baseUser: {
+      tabs: [],
+      events: {
+        afterLogin: "",
+      },
+    },
+    anonymous: {
+      tabs: [],
+      events: {
+        afterLogin: "",
+      },
+    },
+  },
 };

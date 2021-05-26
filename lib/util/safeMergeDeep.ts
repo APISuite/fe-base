@@ -1,5 +1,6 @@
 import { isObject } from "./isObject";
 
+/** **WARNING**: this skips arrays */
 export function safeMergeDeep<T extends Record<never, never>>(target: T, source: Partial<T>) {
   const copy: T = { ...target };
 

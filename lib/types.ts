@@ -58,6 +58,52 @@ export interface Owner {
   supportUrl: string,
 }
 
+export interface TabConfig {
+  /** if parent will not drop one level when navigation is expanded */
+  fixed: boolean,
+  label: {
+    /** use iconName if `icon`. Key and fallback if `text`  */
+    type: "text" | "icon" | "avatar",
+    fallback?: string,
+    key?: string,
+    iconName?: string,
+  },
+  /**
+   * start with `/` or `http` for route and `$` for action
+   * @example "https://apisuite.io"
+   * @example "/profile"
+   * @example "$logout"
+   */
+  action: string,
+  backAction?: {
+    /**
+     * where to go
+     * @example "/profile"
+     */
+    route: string,
+    /**
+     * Default text in case of missing i18n key
+     * @example "Back to Profile"
+     */
+    fallback: string,
+    /**
+     * i18n key
+     * @example "profile.back"
+     */
+    key?: string,
+    iconName?: string,
+  },
+  subTabs?: TabConfig[],
+}
+
+export interface NavigationRole {
+  tabs: TabConfig[],
+  events: {
+    /** `/` prefixed for routing - "/dashboard". Leave empty otherwise  */
+    afterLogin: string,
+  },
+}
+
 export interface DefaultConfig {
   portalName: string,
   clientName: string,
@@ -79,6 +125,17 @@ export interface DefaultConfig {
       components: [],
     },
   },
+  navigation: {
+    title: {
+      route: string,
+      iconFallbackName: string,
+    },
+    admin: NavigationRole,
+    organizationOwner: NavigationRole,
+    developer: NavigationRole,
+    baseUser: NavigationRole,
+    anonymous: NavigationRole,
+  },
 }
 
 export type i18nTranslationOptions = {
@@ -96,5 +153,15 @@ declare module "@material-ui/core/styles/createPalette" {
   interface PaletteOptions {
     label: string,
     gradient: PaletteColor,
+  }
+}
+
+declare module "@material-ui/core/styles/createTypography" {
+  interface FontStyle {
+    url: string;
+  }
+
+  interface FontStyleOptions {
+    url: string;
   }
 }

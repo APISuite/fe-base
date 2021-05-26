@@ -16,16 +16,27 @@
   "bin": {
     "convert-translation": "scripts/convert-translation.js"
   },
+  "watch": {
+    "dev-build": {
+      "patterns": [
+        "lib"
+      ],
+      "extensions": "ts,tsx,scss,json",
+      "quiet": false
+    }
+  },
   "scripts": {
-    "build": "cross-env NODE_ENV=production rimraf ./dist && tsc && node scripts/move-build-files dist",
+    "build": "rimraf ./dist && tsc && node scripts/move-build-files dist",
     "prebuild": "npm run lint && npm t",
+    "dev-build": "tsc",
+    "dev": "npm-watch dev-build",
     "lint": "eslint './lib/**/*.{js,ts,tsx}'",
-    "test": "cross-env NODE_ENV=test jest -c ./jest.json",
+    "test": "jest -c ./jest.json",
     "semantic-release": "semantic-release"
   },
   "peerDependencies": {
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "dependencies": {
     "@material-ui/core": "4.11.3",
@@ -42,7 +53,6 @@
     "@types/react": "17.0.2",
     "@typescript-eslint/eslint-plugin": "4.12.0",
     "@typescript-eslint/parser": "4.12.0",
-    "cross-env": "7.0.3",
     "eslint": "7.17.0",
     "eslint-config-standard-react": "11.0.1",
     "eslint-plugin-react": "7.22.0",
@@ -50,6 +60,7 @@
     "i18next": "20.2.1",
     "jest": "26.6.3",
     "jest-fetch-mock": "3.0.3",
+    "npm-watch": "0.9.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-i18next": "11.8.13",
