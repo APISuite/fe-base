@@ -1,3 +1,10 @@
+# [1.0.0-next.6](https://github.com/APISuite/fe-base/compare/v1.0.0-next.5...v1.0.0-next.6) (2021-05-26)
+
+
+### Features
+
+* adds navigation settings ([#6](https://github.com/APISuite/fe-base/issues/6)) ([b4c1261](https://github.com/APISuite/fe-base/commit/b4c1261df9cfa9eade9e88b4e8fa978d8932635e))
+
 # [1.0.0-next.5](https://github.com/APISuite/fe-base/compare/v1.0.0-next.4...v1.0.0-next.5) (2021-05-13)
 
 
