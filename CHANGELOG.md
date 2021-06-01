@@ -1,3 +1,10 @@
+# [1.0.0-next.7](https://github.com/APISuite/fe-base/compare/v1.0.0-next.6...v1.0.0-next.7) (2021-06-01)
+
+
+### Features
+
+* adds typography urls support ([#7](https://github.com/APISuite/fe-base/issues/7)) ([9bfd3c6](https://github.com/APISuite/fe-base/commit/9bfd3c6103049c66baadbe07a0b3f44caae55b76))
+
 # [1.0.0-next.6](https://github.com/APISuite/fe-base/compare/v1.0.0-next.5...v1.0.0-next.6) (2021-05-26)
 
 
