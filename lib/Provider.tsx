@@ -11,6 +11,7 @@ import { ConfigContext } from "./context";
 import { defaultState, apiDefaults, fallbackLng, LOCALE_KEY } from "./constants";
 import useStyles from "./styles";
 import { ConfigProviderProps, ConfigState, Locale } from "./types";
+import { injectStylesheetLink } from "./util/injectStylesheetLink";
 
 export const ConfigProvider: React.FC<ConfigProviderProps> = ({ children, api, translations, ...rest }) => {
   const classes = useStyles();
@@ -48,6 +49,13 @@ export const ConfigProvider: React.FC<ConfigProviderProps> = ({ children, api, t
         const [{ theme, ...rest }, ownerInfo] = await Promise.all(
           responses.map((r) => r.json()),
         );
+
+        const fontUrls = theme?.typography?.urls;
+
+        // load fonts
+        if (Array.isArray(fontUrls)) {
+          fontUrls.forEach((url) => injectStylesheetLink(url));
+        }
 
         // create theme from API configurations
         appTheme.current = createMuiTheme(theme);
