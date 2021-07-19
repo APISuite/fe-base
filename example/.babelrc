@@ -1,0 +1,19 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "corejs": 3,
+        "useBuiltIns": "usage",
+        "modules": "commonjs",
+        "forceAllTransforms": true,
+        "targets": {
+          "browsers": "last 2 versions, not dead"
+        }
+      }
+    ],
+    "@babel/preset-react",
+    "@babel/preset-typescript"
+  ],
+  "plugins": ["@babel/plugin-transform-runtime"]
+}
