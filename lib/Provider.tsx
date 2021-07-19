@@ -8,6 +8,7 @@ import AirDriftSrc from "./assets/adrift.svg";
 
 import { setOptions, changeLocale, registerTranslations } from "./i18n";
 import { ConfigContext } from "./context";
+import { StoreProvider } from "./store";
 import { defaultState, apiDefaults, fallbackLng, LOCALE_KEY } from "./constants";
 import useStyles from "./styles";
 import { ConfigProviderProps, ConfigState, Locale } from "./types";
@@ -112,9 +113,12 @@ export const ConfigProvider: React.FC<ConfigProviderProps> = ({ children, api, t
         provider: true,
       }}
     >
-      <ThemeProvider theme={appTheme.current!}>
-        {children}
-      </ThemeProvider>
+      {/* TODO: this is part of a POC not yet complete */}
+      <StoreProvider apiUrl={api.base}>
+        <ThemeProvider theme={appTheme.current!}>
+          {children}
+        </ThemeProvider>
+      </StoreProvider>
     </ConfigContext.Provider>
   );
 };

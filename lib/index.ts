@@ -1,6 +1,8 @@
 // core
 export { useConfig } from "./context";
 export { ConfigProvider } from "./Provider";
+// TODO: this is part of a POC not yet complete
+export { Router, history } from "./Router";
 
 // translations
 export { Trans, useTranslation } from "react-i18next";

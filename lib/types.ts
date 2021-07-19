@@ -1,4 +1,7 @@
 import { Palette } from "@material-ui/core/styles/createPalette";
+import { Location, State } from "history";
+import { FC } from "react";
+import { Role } from "./store/auth/types";
 
 export interface ConfigContextProps extends Omit<ConfigState, "initialized" | "failedToFetch"> {
   provider: boolean,
@@ -142,6 +145,38 @@ export type i18nTranslationOptions = {
   serverUrl: string,
   localTranslations: ConfigProviderProps["translations"],
   loaded: string[],
+}
+
+// TODO: this is part of a POC not yet complete
+export interface RouteProps {
+  path: string,
+  content: FC<{ location: Location<State> }>,
+  sideNavEntry?: {
+    /**
+     * where to go
+     * @example "/settings/general"
+     */
+     route: string,
+     /**
+      * Default text in case of missing i18n key
+      * @example "General Settings"
+      */
+     fallback: string,
+     /**
+      * i18n key
+      * @example "extensions.sideNav.myKey"
+      */
+     key?: string,
+  },
+  roles: Role[],
+  subRoutes?: RouteProps[],
+}
+
+// TODO: this is part of a POC not yet complete
+export interface RouterProps {
+  navigation: FC,
+  footer: FC,
+  routes: RouteProps,
 }
 
 declare module "@material-ui/core/styles/createPalette" {
