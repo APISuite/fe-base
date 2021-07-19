@@ -1,89 +1,334 @@
 {
-  "clientName": "acme",
-  "portalName": "acme",
-  "providerSignupURL": "singlesignon.com",
-  "sso": ["keycloak"],
+  "portalName": "ACME",
+  "clientName": "ACME",
+  "documentationURL": "https://google.pt",
+  "supportURL": "http://google.pt",
+  "socialURLs": [
+    {
+      "name": "github",
+      "url": "https://github.com/Cloudoki"
+    },
+    {
+      "name": "facebook",
+      "url": "https://facebook.com/Cloudoki"
+    }
+  ],
+  "sso": [],
+  "providerSignupURL": "",
+  "navigation": {
+    "title": {
+      "route": "/",
+      "iconFallbackName": "view_carousel"
+    },
+    "anonymous": {
+      "tabs": [],
+      "events": {
+        "afterLogin": ""
+      }
+    },
+    "baseUser": {
+      "tabs": [],
+      "events": {
+        "afterLogin": ""
+      }
+    },
+    "developer": {
+      "tabs": [],
+      "events": {
+        "afterLogin": ""
+      }
+    },
+    "organizationOwner": {
+      "tabs": [],
+      "events": {
+        "afterLogin": ""
+      }
+    },
+    "admin": {
+      "tabs": [],
+      "events": {
+        "afterLogin": ""
+      }
+    }
+  },
   "i18nOptions": [
-    {"locale": "en-US", "label": "We speak English"},
-    {"locale": "pt-PT", "label": "Nós falamos Português"}
+    {
+      "locale": "en-US",
+      "label": "We speak English"
+    },
+    {
+      "locale": "pt-PT",
+      "label": "Nós falamos Português"
+    }
   ],
   "theme": {
-    "type": "light",
-    "common": {
-      "black": "#000000",
-      "white": "#FFFFFF"
+    "breakpoints": {
+      "values": {
+        "xs": 0,
+        "sm": 600,
+        "md": 960,
+        "lg": 1280,
+        "xl": 1920
+      }
     },
-    "text": {
-      "primary": "#14283C",
-      "secondary": "#85909A",
-      "disabled": "#DBDEE1",
-      "hint": "#51606E"
+    "direction": "ltr",
+    "palette": {
+      "type": "light",
+      "contrastThreshold": 3,
+      "tonalOffset": 0.2,
+      "divider": "#BAC0C6",
+      "label": "#BAC0C6",
+      "common": {
+        "black": "#000000",
+        "white": "#FFFFFF"
+      },
+      "primary": {
+        "main": "#32C896",
+        "dark": "#007C45",
+        "light": "#B3E7D1",
+        "contrastText": "#FFFFFF"
+      },
+      "secondary": {
+        "main": "#14283C",
+        "dark": "#000017",
+        "light": "#374858",
+        "contrastText": "#FFFFFF"
+      },
+      "error": {
+        "main": "#FF1515",
+        "dark": "#840608",
+        "light": "#FFA1A1",
+        "contrastText": "#FFFFF"
+      },
+      "warning": {
+        "main": "#F78E27",
+        "dark": "#80460B",
+        "light": "#FFDCB9",
+        "contrastText": "rgba(0, 0, 0, 0.87)"
+      },
+      "info": {
+        "main": "#19B3EE",
+        "dark": "#035E86",
+        "light": "#BBECFF",
+        "contrastText": "#035E86"
+      },
+      "success": {
+        "main": "#14DE2D",
+        "dark": "#037C17",
+        "light": "#A9F19E",
+        "contrastText": "#fff"
+      },
+      "gradient": {
+        "main": "linear-gradient(to right, #007D7D 0%, #C8DC8C 100%)",
+        "dark": "linear-gradient(to right, #007D7D 0%, #7DD291 100%)",
+        "light": "linear-gradient(to right, #19A38A 0%, #C8DC8C 100%)",
+        "contrastText": "#FFFFFF"
+      },
+      "text": {
+        "primary": "#14293C",
+        "secondary": "#85909A",
+        "disabled": "#DBDEE1",
+        "hint": "#51606E"
+      },
+      "background": {
+        "default": "#F7F8F9",
+        "paper": "#FFFFFF",
+        "level2": "#F5F5F5",
+        "level1": "#FFFFFF"
+      },
+      "action": {
+        "active": "#51606E",
+        "hover": "rgba(0,0,0,0.04)",
+        "selected": "rgba(0,0,0,0.08)",
+        "disabled": "rgba(0,0,0,0.26)",
+        "disabledBackground": "#DBDEE1",
+        "focus": "#19B3EE",
+        "hoverOpacity": 0.04,
+        "selectedOpacity": 0.08,
+        "disabledOpacity": 0.38,
+        "focusOpacity": 0.12,
+        "activatedOpacity": 0.12
+      },
+      "grey": {
+        "50": "#F7F8F9",
+        "100": "#ECEDEF",
+        "200": "#DBDEE1",
+        "300": "#BAC0C6",
+        "400": "#85909A",
+        "500": "#6A7783",
+        "600": "#646464",
+        "700": "#535E68",
+        "800": "#515151",
+        "900": "#131313",
+        "A100": "#d5d5d5",
+        "A200": "#aaaaaa",
+        "A400": "#303030",
+        "A700": "#616161"
+      }
     },
-    "primary": {
-      "main": "#14283C",
-      "dark": "#000017",
-      "light": "#374858",
-      "contrastText": "#FFFFFF"
+    "shadows": [
+      "none",
+      "0px 1px 3px 0px rgba(20, 40, 60, 0.12), 0px 1px 2px 0px rgba(20, 40, 60, 0.24)",
+      "0px 1px 3px 0px rgba(20, 40, 60, 0.12), 0px 1px 2px 0px rgba(20, 40, 60, 0.24)",
+      "0px 2px 4px 0px rgba(20, 40, 60, 0.13), 0px 2px 4px 0px rgba(20, 40, 60, 0.24)",
+      "0px 2px 5px 0px rgba(20, 40, 60, 0.14), 0px 3px 6px 0px rgba(20, 40, 60, 0.23)",
+      "0px 3px 6px 0px rgba(20, 40, 60, 0.15), 0px 4px 8px 0px rgba(20, 40, 60, 0.22)",
+      "0px 3px 8px 0px rgba(20, 40, 60, 0.16), 0px 6px 12px 0px rgba(20, 40, 60, 0.21)",
+      "0px 4px 8px 0px rgba(20, 40, 60, 0.17), 0px 7px 14px 0px rgba(20, 40, 60, 0.20)",
+      "0px 4px 9px 0px rgba(20, 40, 60, 0.18), 0px 8px 16px 0px rgba(20, 40, 60, 0.20)",
+      "0px 4px 10px 0px rgba(20, 40, 60, 0.18), 0px 9px 18px 0px rgba(20, 40, 60, 0.19)",
+      "0px 5px 11px 0px rgba(20, 40, 60, 0.19), 0px 10px 20px 0px rgba(20, 40, 60, 0.18)",
+      "0px 5px 12px 0px rgba(20, 40, 60, 0.19), 0px 11px 22px 0px rgba(20, 40, 60, 0.18)",
+      "0px 5px 13px 0px rgba(20, 40, 60, 0.20), 0px 12px 24px 0px rgba(20, 40, 60, 0.17)",
+      "0px 6px 14px 0px rgba(20, 40, 60, 0.20), 0px 13px 26px 0px rgba(20, 40, 60, 0.16)",
+      "0px 6px 15px 0px rgba(20, 40, 60, 0.20), 0px 14px 28px 0px rgba(20, 40, 60, 0.16)",
+      "0px 6px 16px 0px rgba(20, 40, 60, 0.21), 0px 15px 30px 0px rgba(20, 40, 60, 0.15)",
+      "0px 7px 17px 0px rgba(20, 40, 60, 0.21), 0px 16px 32px 0px rgba(20, 40, 60, 0.14)",
+      "0px 7px 18px 0px rgba(20, 40, 60, 0.22), 0px 17px 34px 0px rgba(20, 40, 60, 0.13)",
+      "0px 7px 19px 0px rgba(20, 40, 60, 0.22), 0px 18px 36px 0px rgba(20, 40, 60, 0.13)",
+      "0px 8px 20px 0px rgba(20, 40, 60, 0.23), 0px 19px 38px 0px rgba(20, 40, 60, 0.12)",
+      "0px 8px 21px 0px rgba(20, 40, 60, 0.23), 0px 20px 40px 0px rgba(20, 40, 60, 0.11)",
+      "0px 8px 22px 0px rgba(20, 40, 60, 0.23), 0px 21px 42px 0px rgba(20, 40, 60, 0.10)",
+      "0px 9px 22px 0px rgba(20, 40, 60, 0.23), 0px 22px 44px 0px rgba(20, 40, 60, 0.09)",
+      "0px 10px 23px 0px rgba(20, 40, 60, 0.24), 0px 23px 46px 0px rgba(20, 40, 60, 0.08)",
+      "0px 10px 24px 0px rgba(20, 40, 60, 0.24), 0px 24px 48px 0px rgba(20, 40, 60, 0.08)"
+    ],
+    "typography": {
+      "urls": [
+        "https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      ],
+      "htmlFontSize": 16,
+      "fontFamily": "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
+      "fontSize": 14,
+      "fontWeightLight": 300,
+      "fontWeightRegular": 400,
+      "fontWeightMedium": 500,
+      "fontWeightBold": 700,
+      "h1": {
+        "fontFamily": "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
+        "fontWeight": 700,
+        "fontSize": "42px",
+        "lineHeight": 1,
+        "letterSpacing": 0.5
+      },
+      "h2": {
+        "fontFamily": "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
+        "fontWeight": 300,
+        "fontSize": "32px",
+        "lineHeight": 1.25,
+        "letterSpacing": 0.5
+      },
+      "h3": {
+        "fontFamily": "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
+        "fontWeight": 500,
+        "fontSize": "24px",
+        "lineHeight": 1.25,
+        "letterSpacing": 0.5
+      },
+      "h4": {
+        "fontFamily": "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
+        "fontWeight": 400,
+        "fontSize": "22px",
+        "lineHeight": 1.25,
+        "letterSpacing": 0.5
+      },
+      "h5": {
+        "fontFamily": "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
+        "fontWeight": 300,
+        "fontSize": "20px",
+        "lineHeight": 1.3,
+        "letterSpacing": 0.5
+      },
+      "h6": {
+        "fontFamily": "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
+        "fontWeight": 400,
+        "fontSize": "18px",
+        "lineHeight": 1.3,
+        "letterSpacing": 0.5
+      },
+      "subtitle1": {
+        "fontFamily": "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
+        "fontWeight": 300,
+        "fontSize": "16px",
+        "lineHeight": 1.5,
+        "letterSpacing": 0.5
+      },
+      "subtitle2": {
+        "fontFamily": "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
+        "fontWeight": 300,
+        "fontSize": "14px",
+        "lineHeight": 1.3,
+        "letterSpacing": 0.5
+      },
+      "body1": {
+        "fontFamily": "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
+        "fontWeight": 400,
+        "fontSize": "16px",
+        "lineHeight": 1.5,
+        "letterSpacing": 0.5
+      },
+      "body2": {
+        "fontFamily": "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
+        "fontWeight": 400,
+        "fontSize": "14px",
+        "lineHeight": 1.5,
+        "letterSpacing": 0.5
+      },
+      "caption": {
+        "fontFamily": "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
+        "fontWeight": 400,
+        "fontSize": "12px",
+        "lineHeight": 1.5,
+        "letterSpacing": 0.5
+      },
+      "button": {
+        "fontFamily": "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
+        "fontWeight": 700,
+        "fontSize": "16px",
+        "lineHeight": 1.7,
+        "letterSpacing": 0.5,
+        "textTransform": "none"
+      },
+      "overline": {
+        "fontFamily": "\"Roboto\", \"Helvetica\", \"Arial\", sans-serif",
+        "fontWeight": 400,
+        "fontSize": "14px",
+        "lineHeight": 1.5,
+        "letterSpacing": 0.5,
+        "textTransform": "none"
+      }
     },
-    "secondary": {
-      "main": "#32C896",
-      "dark": "#007C45",
-      "light": "#B3E7D1",
-      "contrastText": "#14283C"
-    },
-    "background": {
-      "default": "#F7F8F9",
-      "paper": "#FFFFFF"
-    },
-    "info": {
-      "main": "#19B3EE",
-      "dark": "#035E86",
-      "light": "#BBECFF"
-    },
-    "success": {
-      "main": "#14DE2D",
-      "dark": "#037C17",
-      "light": "#A9F19E"
-    },
-    "warning": {
-      "dark": "#80460B",
-      "light": "#FFDCB9",
-      "main": "#F78E27"
-    },
-    "error": {
-      "main": "#FF1515",
-      "dark": "#840608",
-      "light": "#FFA1A1"
-    },
-    "action": {
-      "active": "#51606E",
-      "disabled": "#DBDEE1",
-      "disabledBackground": "rgba(0, 0, 0, 0.12)",
-      "focus": "#19B3EE",
-      "hover": "rgba(0,0,0,0.04)",
-      "selected": "rgba(0,0,0,0.08)"
-    },
-    "divider": "#DBDEE1",
-    "label": "#BAC0C6",
-    "grey": {
-      "50": "#F7F8F9",
-      "100": "#ECEDEF",
-      "200": "#DBDEE1",
-      "300": "#BAC0C6",
-      "400": "#85909A",
-      "500": "#6A7783",
-      "600": "#646464",
-      "700": "#535E68",
-      "800": "#515151",
-      "900": "#131313"
-    },
-    "gradient": {
-      "main": "linear-gradient(270deg, #C8DC8C 0%, #007D7D 100%)",
-      "dark": "linear-gradient(270deg, #7DD291 0%, #007D7D 100%)",
-      "light": "linear-gradient(270deg, #C8DC8C 0%, #19A38A 100%)"
-    },
-    "dimensions": {
+    "shape": {
       "borderRadius": 4
+    },
+    "transitions": {
+      "easing": {
+        "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "easeOut": "cubic-bezier(0.0, 0, 0.2, 1)",
+        "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+        "sharp": "cubic-bezier(0.4, 0, 0.6, 1)"
+      },
+      "duration": {
+        "shortest": 150,
+        "shorter": 200,
+        "short": 250,
+        "standard": 300,
+        "complex": 375,
+        "enteringScreen": 225,
+        "leavingScreen": 195
+      }
+    },
+    "zIndex": {
+      "mobileStepper": 1000,
+      "speedDial": 1050,
+      "appBar": 1100,
+      "drawer": 1200,
+      "modal": 1300,
+      "snackbar": 1400,
+      "tooltip": 1500
+    },
+    "nprogress": {
+      "color": "#000"
     }
   }
 }
