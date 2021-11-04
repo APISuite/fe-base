@@ -50,6 +50,10 @@ export const ConfigProvider: React.FC<ConfigProviderProps> = ({ children, api, t
           responses.map((r) => r.json()),
         );
 
+        if(rest.portalName) {
+          document.title = rest.portalName;
+        }
+
         const fontUrls = theme?.typography?.urls;
 
         // load fonts
