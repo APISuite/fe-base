@@ -1,3 +1,10 @@
+# [1.0.0-next.8](https://github.com/APISuite/fe-base/compare/v1.0.0-next.7...v1.0.0-next.8) (2021-11-08)
+
+
+### Features
+
+* Set the portal name based on the settings ([#8](https://github.com/APISuite/fe-base/issues/8)) ([f76ec11](https://github.com/APISuite/fe-base/commit/f76ec1169d00181c233cdd6ffaefbbf03a05bab5))
+
 # [1.0.0-next.7](https://github.com/APISuite/fe-base/compare/v1.0.0-next.6...v1.0.0-next.7) (2021-06-01)
 
 
