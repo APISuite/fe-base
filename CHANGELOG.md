@@ -1,3 +1,10 @@
+# [1.0.0-next.9](https://github.com/APISuite/fe-base/compare/v1.0.0-next.8...v1.0.0-next.9) (2021-11-11)
+
+
+### Features
+
+* **custom:** create round button, extend theme with custom property ([#9](https://github.com/APISuite/fe-base/issues/9)) ([c5c073c](https://github.com/APISuite/fe-base/commit/c5c073ccea931497f0d5a014046add3b829c28cf))
+
 # [1.0.0-next.8](https://github.com/APISuite/fe-base/compare/v1.0.0-next.7...v1.0.0-next.8) (2021-11-08)
 
 
