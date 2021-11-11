@@ -165,3 +165,49 @@ declare module "@material-ui/core/styles/createTypography" {
     url: string;
   }
 }
+
+declare module "@material-ui/core/styles/createMuiTheme" {
+  interface Theme {
+    custom: {
+      images: {
+        headerBackground: string,
+        homeSlider: {
+          background: string,
+          slide1: string,
+          slide2: string,
+          slide3: string,
+        },
+        auth: string,
+        marketplace: {
+          hero: string,
+          background: string,
+        },
+      },
+      button: {
+        rounded: boolean,
+      },
+    },
+  }
+
+  interface ThemeOptions {
+    custom?: {
+      images?: {
+        headerBackground?: string,
+        homeSlider?: {
+          background?: string,
+          slide1?: string,
+          slide2?: string,
+          slide3?: string,
+        },
+        auth?: string,
+        marketplace?: {
+          hero?: string,
+          background?: string,
+        },
+      },
+      button?: {
+        rounded?: boolean,
+      },
+    },
+  }
+}
