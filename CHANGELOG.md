@@ -1,3 +1,10 @@
+# [1.0.0-next.10](https://github.com/APISuite/fe-base/compare/v1.0.0-next.9...v1.0.0-next.10) (2021-11-12)
+
+
+### Bug Fixes
+
+* **components:** add component as prop ([#10](https://github.com/APISuite/fe-base/issues/10)) ([1dcfce6](https://github.com/APISuite/fe-base/commit/1dcfce6c8de0a688c80f9eb3cbd2c10b39f6271d))
+
 # [1.0.0-next.9](https://github.com/APISuite/fe-base/compare/v1.0.0-next.8...v1.0.0-next.9) (2021-11-11)
 
 
