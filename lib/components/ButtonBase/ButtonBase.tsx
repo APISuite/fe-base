@@ -20,10 +20,8 @@ export const ButtonBase: FC<Props & MuiButtonBaseProps<React.ElementType, { comp
     },
   });
   const classes = useStyles();
+
   return (
-    <MuiButtonBase
-      className={clsx(className, { [classes.rounded]: rounded || custom?.button?.rounded })}
-      {...rest}
-    />
+    <MuiButtonBase {...rest} className={clsx(className, { [classes.rounded]: rounded || custom?.button?.rounded })} />
   );
 };
