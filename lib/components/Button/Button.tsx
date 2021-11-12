@@ -1,9 +1,13 @@
 import React, { FC } from "react";
-import { Button as Btn, ButtonProps, makeStyles, useTheme } from "@material-ui/core";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import MuiButton , { ButtonProps as MuiButtonProps } from "@material-ui/core/Button";
 import clsx from "clsx";
 
-export const Button: FC<{ rounded?: boolean } & ButtonProps> = ({
-  children,
+interface Props {
+  rounded?: boolean;
+}
+
+export const Button: FC<Props & MuiButtonProps<React.ElementType, { component?: React.ElementType }>> = ({
   className,
   rounded = false,
   ...rest
@@ -18,8 +22,6 @@ export const Button: FC<{ rounded?: boolean } & ButtonProps> = ({
   const classes = useStyles();
 
   return (
-    <Btn {...rest} className={clsx(className, { [classes.rounded]: rounded || custom?.button?.rounded })}>
-      {children}
-    </Btn>
+    <MuiButton {...rest} className={clsx(className, { [classes.rounded]: rounded || custom?.button?.rounded })} />
   );
 };
