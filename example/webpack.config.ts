@@ -42,6 +42,10 @@ export default {
 
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx", ".json", ".svg"],
+    modules: [
+      path.resolve(__dirname, "src"),
+      "node_modules",
+    ],
     alias: {
       react: path.resolve("./node_modules", "react"),
       "react-dom": path.resolve("./node_modules", "react-dom"),
