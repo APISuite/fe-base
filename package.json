@@ -3,7 +3,7 @@
   "version": "0.0.0-next.0",
   "description": "ApiSuite core base that exports a provider of server settings, style system and internationalization.",
   "author": "Bruno Morgado <bruno@cloudoki.com>",
-  "license": "MPL-2",
+  "license": "MPL-2.0",
   "homepage": "https://github.com/APISuite/fe-base#readme",
   "bugs": {
     "url": "https://github.com/APISuite/fe-base/issues"
@@ -12,7 +12,7 @@
     "type": "git",
     "url": "https://github.com/APISuite/fe-base"
   },
-  "main": "index.js",
+  "main": "build/index.js",
   "bin": {
     "convert-translation": "scripts/convert-translation.js"
   },
@@ -40,8 +40,11 @@
   },
   "dependencies": {
     "@material-ui/core": "4.11.3",
+    "history": "5.0.0",
     "i18next": "20.2.1",
-    "react-i18next": "11.8.13"
+    "qs": "6.10.1",
+    "react-i18next": "11.8.13",
+    "storeon": "3.1.4"
   },
   "devDependencies": {
     "@material-ui/core": "4.11.3",
@@ -50,6 +53,7 @@
     "@testing-library/react": "11.2.6",
     "@types/jest": "26.0.22",
     "@types/node": "14.14.37",
+    "@types/qs": "6.9.7",
     "@types/react": "17.0.2",
     "@typescript-eslint/eslint-plugin": "4.12.0",
     "@typescript-eslint/parser": "4.12.0",
@@ -61,8 +65,8 @@
     "jest": "26.6.3",
     "jest-fetch-mock": "3.0.3",
     "npm-watch": "0.9.0",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
     "react-i18next": "11.8.13",
     "semantic-release": "17.4.2",
     "ts-jest": "26.5.5",

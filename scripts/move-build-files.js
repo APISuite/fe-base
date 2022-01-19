@@ -29,7 +29,7 @@ async function main(args) {
     fs.promises.readFile(path.resolve(cwd, readmeFileName), { encoding: "utf8" }),
     fs.promises.readdir(path.resolve(cwd, "lib", "assets")),
     // make sure assets folder exit
-    fs.promises.mkdir(path.resolve(cwd, "dist", "assets"), { recursive: true }),
+    fs.promises.mkdir(path.resolve(cwd, "dist", "build", "assets"), { recursive: true }),
     // make sure scripts folder exit
     fs.promises.mkdir(path.resolve(cwd, "dist", "scripts"), { recursive: true }),
   ]);
@@ -59,7 +59,7 @@ async function main(args) {
     toMove.push(
       fs.promises.copyFile(
         path.resolve(cwd, "lib", "assets", filename),
-        path.resolve(cwd, moveDir, "assets", filename),
+        path.resolve(cwd, moveDir, "build", "assets", filename),
       )
     );
   }

@@ -1,4 +1,7 @@
 import { Palette } from "@material-ui/core/styles/createPalette";
+import { Location, State } from "history";
+import { FC } from "react";
+import { Role } from "./store/auth/types";
 
 export interface ConfigContextProps extends Omit<ConfigState, "initialized" | "failedToFetch"> {
   provider: boolean,
@@ -119,12 +122,6 @@ export interface DefaultConfig {
     sandbox: string,
     remoteAPI: string,
   },
-  // TODO: there is no real use for this setting atm - will probably be deprecated in the future
-  pages: {
-    landing: {
-      components: [],
-    },
-  },
   navigation: {
     title: {
       route: string,
@@ -142,6 +139,110 @@ export type i18nTranslationOptions = {
   serverUrl: string,
   localTranslations: ConfigProviderProps["translations"],
   loaded: string[],
+}
+
+export type RouterState = { router: { location: Location<State>, sideNavEntries: SideNavigationEntry[] } }
+
+export type SideNavigationEntry = {
+  /**
+   * Full path to this entry
+   */
+  to: string,
+  /**
+   * Is the content of this entry being render
+   */
+  active: boolean,
+  /**
+   * Default text in case of missing i18n key
+   * @example "General Settings"
+   */
+  fallback: string,
+  /**
+   * i18n key
+   * @example "extensions.sideNav.myKey"
+   */
+  key?: string,
+}
+
+export interface RouterConfig {
+  /**
+   * Path to match this configuration
+   *
+   * @example "/"
+   * @example "/settings"
+   */
+  [key: string]: {
+    /**
+     * Which roles are allowed to render content at matched path
+     */
+    roles: Role["name"][],
+    /**
+     * `main` - Content will be rendered in the bigger right side of the screen.
+     *
+     *
+     * `navigation` - Content will be rendered in the smaller left side of the screen.
+     *
+     * **Note:**
+     *
+     * Side navigation will be rendered in all subsequent segments of the path.
+     *
+     * The following examples are subsequent segments of `"/settings"`:
+     *  - `"/settings/general"`
+     *  - `"/settings/profile"`
+     *  - `"/settings/profile/password"`
+     *
+     *
+     * `modal` - Content will be rendered on top of the main screen.
+     *
+     * **Note:**
+     *
+     * Modal routes will always render their parent segment behind if not previous render information is available.
+     * They should not be defined without parent segments or nothing will render under the modal.
+     *
+     * The following examples are valid paths for modals:
+     *  - `"/settings-modal"`
+     *  - `"/home/some-modal"`
+     *  - `"/home/profile/password-modal"`
+     */
+    contentType: "main" | "navigation" | "modal",
+    /**
+     * Component to render at matched path
+     */
+    content: FC<RouterState>,
+    /**
+     * Default text in case of missing i18n key
+     * @example "General Settings"
+     */
+    fallback: string,
+    /**
+     * i18n key
+     * @example "extensions.sideNav.myKey"
+     */
+    key?: string,
+  },
+}
+
+export interface RouterProps {
+  /**
+   * Routes configuration
+   */
+  config: RouterConfig,
+  /**
+   * Rendered in main content if a route is not found
+   */
+  NotFound: FC<RouterState>,
+  /**
+   * Useful for top navigation
+   *
+   * This component will always be present at the top.
+   */
+  Navigation?: FC<RouterState>,
+  /**
+   *  Useful for bottom navigation
+   *
+   * This component will always be present at the bottom.
+   */
+  Footer?: FC<RouterState>,
 }
 
 declare module "@material-ui/core/styles/createPalette" {
